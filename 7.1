@@ -1,1 +1,51 @@
+package com.company;
 
+public class Main {
+
+    public static void main(String[] args) {
+
+        Person person = new Person();
+        person.greet();
+
+        Student student = new Student();
+        student.setAge(21);
+        student.greet();
+        System.out.println(student.getAge());
+
+        Teacher teacher = new Teacher();
+        teacher.setAge(28);
+        teacher.greet();
+        teacher.explain();
+
+    }
+}
+
+public class Person {
+    private int age;
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void greet() {
+        System.out.println("Hello");
+    }
+}
+
+public class Student extends Person {
+    public void goToLesson() {
+        System.out.println("I'm going to Lesson");
+    }
+}
+
+public class Teacher extends Person {
+    private String subject;
+
+    public void explain() {
+        System.out.println("Explanation begins");
+    }
+}
